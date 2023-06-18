@@ -1,14 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int fun(int n)
+int fun(int i,int sum)
 {
-    if(n==0) return 0;
-    return n+fun(n-1);
+    if(i<1) 
+    {
+        cout<<sum;
+    return 0;
+    }
+    fun(i-1,sum+i);
 }
 int main() {
-    // Write C++ code here
-    cout<<fun(5);
+
+  fun(5,0);
 
     return 0;
 }
