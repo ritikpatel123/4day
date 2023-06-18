@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void fun(int arr[],int i ,int n, vector<int> v)
+{
+    if(i>=n) 
+    {
+        for(int i=0;i<v.size();i++)
+        {
+            cout<<v[i]<<" ";
+        }
+        cout<<endl;
+        return;
+    }
+    v.push_back(arr[i]);
+    fun(arr,i+1,n,v);
+    v.pop_back();
+    fun(arr,i+1,n,v);
+}
+
+int main() {
+    
+    int arr[]={3,1,2};
+    vector<int> ans;
+  fun(arr,0,3,ans);
+    return 0;
+}
